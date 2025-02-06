@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Temporal Representation Alignment" />
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-solarizedlight.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs-bibtex@2.1.0/prism-bibtex.min.js"></script>
+    <link rel="stylesheet" href="static/css/index.css" />
+
+    <title>
+      Temporal Representation Alignment: Emergent Compositionality in Instruction Following with
+      Successor Features Temporal Representation Alignment
+    </title>
+
+    <script
+      type="text/javascript"
+      id="MathJax-script"
+      async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-svg.js"></script>
+    <script>
+      function selectContent(query) {
+        var range = document.createRange()
+        var selection = window.getSelection()
+        var elem = document.querySelector(query)
+        range.selectNodeContents(elem)
+        selection.removeAllRanges()
+        selection.addRange(range)
+      }
+    </script>
+  </head>
+
+  <body>
+    <script type="text/javascript">
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+          processEscapes: true,
+          macros: {
+            S: "\\mathcal{S}",
+            A: "\\mathcal{A}",
+            D: "\\mathcal{D}",
+            R: "\\mathbb{R}",
+            E: "\\mathbb{E}",
+            P: "\\mathrm{P}",
+            var: "\\mathrm{Var}",
+            cov: "\\mathrm{Cov}",
+            argmin: "\\mathop{\\arg\\min}",
+            argmax: "\\mathop{\\arg\\max}",
+          },
+        },
+        svg: {
+          fontCache: "global",
+        },
+      }
+    </script>
+    <header>
+      <h1>
+        Temporal Representation Alignment: Emergent Compositionality in Instruction Following with
+        Successor Features
+      </h1>
+      <div class="authors">
+        <span class="author">Anonymous Authors</span>
+        <span class="affil">1</span>
+      </div>
+      <div class="notes">
+        <span class="affil">1</span>
+        <span class="institution">Anonymous Institution</span>
+      </div>
+      <div class="links">
+        <span class="link">
+          <a href="./static/pdf/tra.pdf" target="_blank" class="button">
+            <span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span>
+          </a>
+        </span>
+        <!-- <span class="link"> -->
+        <!--   <a href="TODO" class="button"> -->
+        <!--     <span class="icon"><i class="ai ai-arxiv"></i></span><span>arXiv</span> -->
+        <!--   </a> -->
+        <!-- </span> -->
+        <span class="link">
+          <a href="https://anonymous.4open.science/r/ogcrl-43A4" class="button">
+            <span class="icon"><i class="fas fa-code"></i></span><span>Code</span>
+          </a>
+        </span>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <figure>
+          <div class="yspace centered">
+            <div class="small">
+              <img src="static/figures/overview.svg" />
+            </div>
+            <figcaption>
+              <b>Figure:</b>
+              We show our Temporal Representation Alignment (TRA) method performing a language task,
+              <q>put all food items in the bowl.</q> TRA adds a time-contrastive loss for learning
+              task representations to use with a goal- and language-conditioned policy. While TRA
+              can implicitly decompose the task into steps and execute them one by one, the
+              behavioral cloning (BC) and offline RL (AWR) methods fail at this compositional task.
+              The structured representations learned by TRA enable this compositional behavior
+              without explicit planning or hierarchical structure.
+            </figcaption>
+          </div>
+        </figure>
+      </section>
+
+      <section>
+        <div class="abstract">
+          <h3>Abstract</h3>
+          <p>
+            Effective task representations should facilitate compositionality, such that after
+            learning a variety of basic tasks, an agent can perform compound tasks consisting of
+            multiple steps simply by composing the representations of the constituent steps
+            together. While this is conceptually simple and appealing, it is not clear how to
+            automatically learn representations that enable this sort of compositionality. We show
+            that learning to associate the representations of current and future states with a
+            temporal alignment loss can improve compositional generalization, even in the absence of
+            any explicit subtask planning or reinforcement learning. This approach is able to
+            generalize to novel composite tasks specified as goal images or language instructions,
+            without assuming any additional reward supervision or explicit subtask planning. We
+            evaluate our approach across diverse robotic manipulation tasks as well as in
+            simulation, showing substantial improvements for tasks specified with either language or
+            goal images.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Method</h2>
+        <div class="margin">
+          <img src="static/figures/algorithm.svg" />
+        </div>
+      </section>
+
+      <section>
+        <h2>Real-World Results</h2>
+        <div class="yspace">
+          <div class="margin ypad">
+            <img src="static/figures/robotevals.svg" />
+          </div>
+          <div class="centered columns">
+            <div class="centered half">
+              <iframe
+                src="https://www.youtube.com/embed/SdDtq-uBfoA?si=B0Ilirif_9ovmUli"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            </div>
+            <div class="centered half">
+              <iframe
+                src="https://www.youtube.com/embed/xkS2ABXPQkk?si=fn75oXtoZbBiWWoS"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="centered columns">
+            <div class="centered half">
+              <iframe
+                src="https://www.youtube.com/embed/SdDtq-uBfoA?si=B0Ilirif_9ovmUli"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            </div>
+            <div class="centered half">
+              <iframe
+                src="https://www.youtube.com/embed/xkS2ABXPQkk?si=fn75oXtoZbBiWWoS"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Simulation Results</h2>
+        <div class="centered">
+          <img src="static/figures/ogbench.svg" />
+        </div>
+      </section>
+
+      <!--       <!-1- <section> -1-> -->
+      <!--       <!-1-   <h2>Analysis</h2> -1-> -->
+      <!--       <!-1-   <div class="theorem"> -1-> -->
+      <!--       <!-1-     <span>Theorem 1</span> -1-> -->
+      <!--       <!-1-     <span>Theoretical Result</span> -1-> -->
+      <!--       <!-1-     Vivamus mi quam, vehicula quis leo commodo, efficitur dignissim diam. Mauris sollicitudin -1-> -->
+      <!--       <!-1-     sapien sem, non sagittis mauris tincidunt in. -1-> -->
+      <!--       <!-1-   </div> -1-> -->
+      <!--       <!-1-   <p> -1-> -->
+      <!--       <!-1-     Integer viverra dapibus tempor. Morbi ac orci lorem. Aliquam nec ligula ipsum. Praesent at -1-> -->
+      <!--       <!-1-     tempor nisl. Orci varius natoque penatibus et magnis dis parturient montes, nascetur -1-> -->
+      <!--       <!-1-     ridiculus mus. Sed dapibus, lectus finibus volutpat dictum, ipsum tortor rhoncus nisl, -1-> -->
+      <!--       <!-1-     eget ullamcorper turpis erat id felis. -1-> -->
+      <!--       <!-1-   </p> -1-> -->
+      <!--       <!-1- </section> -1-> -->
+
+      <!--       <!-1- <section> -1-> -->
+      <!--       <!-1-   <h2>Visualization</h2> -1-> -->
+      <!--       <!-1-   <div class="margin"> -1-> -->
+      <!--       <!-1-     <img src="static/figures/img1.svg" /> -1-> -->
+      <!--       <!-1-     <p class="caption"> -1-> -->
+      <!--       <!-1-       <b>Figure.</b> -1-> -->
+      <!--       <!-1-       Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis -1-> -->
+      <!--       <!-1-       egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. -1-> -->
+      <!--       <!-1-       Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris -1-> -->
+      <!--       <!-1-       placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum -1-> -->
+      <!--       <!-1-       erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit -1-> -->
+      <!--       <!-1-       eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. -1-> -->
+      <!--       <!-1-       Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus -1-> -->
+      <!--       <!-1-       faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat -1-> -->
+      <!--       <!-1-       volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus -1-> -->
+      <!--       <!-1-     </p> -1-> -->
+      <!--       <!-1-   </div> -1-> -->
+      <!--       <!-1- </section> -1-> -->
+
+      <!--       <!-1- <section> -1-> -->
+      <!--       <!-1-   <h2>Results</h2> -1-> -->
+      <!--       <!-1-   <div class="columns"> -1-> -->
+      <!--       <!-1-     <div class="half"> -1-> -->
+      <!--       <!-1-       <img src="static/figures/img3.svg" /> -1-> -->
+      <!--       <!-1-       <p class="caption"> -1-> -->
+      <!--       <!-1-         Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis -1-> -->
+      <!--       <!-1-         egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. -1-> -->
+      <!--       <!-1-         placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Eget -1-> -->
+      <!--       <!-1-         tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. -1-> -->
+      <!--       <!-1-       </p> -1-> -->
+      <!--       <!-1-     </div> -1-> -->
+      <!--       <!-1-     <div class="half"> -1-> -->
+      <!--       <!-1-       <img src="static/figures/img3.svg" /> -1-> -->
+      <!--       <!-1-       <p class="caption"> -1-> -->
+      <!--       <!-1-         Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu -1-> -->
+      <!--       <!-1-         libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat -1-> -->
+      <!--       <!-1-         eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat -1-> -->
+      <!--       <!-1-         wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. -1-> -->
+      <!--       <!-1-       </p> -1-> -->
+      <!--       <!-1-     </div> -1-> -->
+      <!--       <!-1-   </div> -1-> -->
+      <!--       <!-1- </section> -1-> -->
+    </main>
+  </body>
+</html>

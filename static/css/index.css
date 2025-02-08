@@ -248,6 +248,20 @@ pre {
   margin: 0 auto;
 }
 
+.top {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-bottom: auto;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  margin-top: auto;
+}
+
 figure, .figure {
   display: flex;
   flex-direction: column;
@@ -274,7 +288,7 @@ div.columns > div {
   flex: 0 1 auto;
 }
 
-div.columns > .thin {
+div.columns > .third {
   flex-basis: 30%;
 }
 
@@ -362,7 +376,7 @@ div.theorem span + span:after {
 
 figcaption, .caption {
   width: 90%;
-  margin: auto;
+  margin: 0 auto;
 }
 
 figcaption[title]::before {
@@ -447,4 +461,17 @@ div.xspace > div + div {
 
 div.yspace > div + div {
   margin-top: 1em;
+}
+
+.instruction {
+  margin: 0 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border: 1.5px solid #666;
+  border-radius: 4px;
+  padding: 5pt 1em;
+  margin-bottom: 1em;
+  text-align: center;
+  text-wrap: balance;
 }

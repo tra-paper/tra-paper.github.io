@@ -140,29 +140,38 @@
       </section>
 
       <section>
-        <div class="abstract">
-          <h3>Abstract</h3>
-          <p>
-            Effective task representations should facilitate compositionality, such that after
-            learning a variety of basic tasks, an agent can perform compound tasks consisting of
-            multiple steps simply by composing the representations of the constituent steps
-            together. While this is conceptually simple and appealing, it is not clear how to
-            automatically learn representations that enable this sort of compositionality. We show
-            that learning to associate the representations of current and future states with a
-            temporal alignment loss can improve compositional generalization, even in the absence of
-            any explicit subtask planning or reinforcement learning. This approach is able to
-            generalize to novel composite tasks specified as goal images or language instructions,
-            without assuming any additional reward supervision or explicit subtask planning. We
-            evaluate our approach across diverse robotic manipulation tasks as well as in
-            simulation, showing substantial improvements for tasks specified with either language or
-            goal images.
-          </p>
+        <div class="columns centered">
+          <div class="wide">
+            <div class="abstract">
+              <h3>Abstract</h3>
+              <p>
+                Effective task representations should facilitate compositionality, such that after
+                learning a variety of basic tasks, an agent can perform compound tasks consisting of
+                multiple steps simply by composing the representations of the constituent steps
+                together. While this is conceptually simple and appealing, it is not clear how to
+                automatically learn representations that enable this sort of compositionality. We
+                show that learning to associate the representations of current and future states
+                with a temporal alignment loss can improve compositional generalization, even in the
+                absence of any explicit subtask planning or reinforcement learning. This approach is
+                able to generalize to novel composite tasks specified as goal images or language
+                instructions, without assuming any additional reward supervision or explicit subtask
+                planning. We evaluate our approach across diverse robotic manipulation tasks as well
+                as in simulation, showing substantial improvements for tasks specified with either
+                language or goal images.
+              </p>
+            </div>
+          </div>
+          <div class="half">
+            <video autoplay muted loop>
+              <source src="static/videos/tra-anim.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </div>
       </section>
 
       <section>
         <h2>Method</h2>
-        <p><b>TRA</b> utilizes</p>
         <div class="margin">
           <img src="static/figures/algorithm.svg" />
         </div>
@@ -170,7 +179,7 @@
 
       <section>
         <h2>Real-World Results</h2>
-        <div class="yspace">
+        <div>
           <div class="margin ypad">
             <img src="static/figures/robotevals.svg" />
           </div>
@@ -181,10 +190,10 @@
                   <source src="static/videos/mushroom_out.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
+                <figcaption>
+                  <div class="instruction"><q>Take the mushroom out of the drawer</q></div>
+                </figcaption>
               </figure>
-              <figcaption>
-                <div class="instruction"><q>Take the mushroom out of the drawer</q></div>
-              </figcaption>
             </div>
             <div class="top centered third">
               <figure>
@@ -192,10 +201,10 @@
                   <source src="static/videos/food_in_drawer.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
+                <figcaption>
+                  <div class="instruction"><q>Put the food items into the drawer</q></div>
+                </figcaption>
               </figure>
-              <figcaption>
-                <div class="instruction"><q>Put the food items into the drawer</q></div>
-              </figcaption>
             </div>
             <div class="top centered third">
               <figure>
@@ -203,10 +212,10 @@
                   <source src="static/videos/blue_objects.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
+                <figcaption>
+                  <div class="instruction"><q>Put the blue objects into the pan</q></div>
+                </figcaption>
               </figure>
-              <figcaption>
-                <div class="instruction"><q>Put the blue objects into the pan</q></div>
-              </figcaption>
             </div>
           </div>
           <div class="centered columns">
@@ -227,12 +236,12 @@
                   <source src="static/videos/tra.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
+                <figcaption>
+                  <div class="instruction">
+                    <q>Move the pepper to the right, and then sweep the towel to the top</q>
+                  </div>
+                </figcaption>
               </figure>
-              <figcaption>
-                <div class="instruction">
-                  <q>Move the pepper to the right, and then sweep the towel to the top</q>
-                </div>
-              </figcaption>
             </div>
             <div class="top centered third">
               <figure>
@@ -240,12 +249,12 @@
                   <source src="static/videos/corn_sushi.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
+                <figcaption>
+                  <div class="instruction">
+                    <q>Put the corn on the plate, and then put the sushi in the pot</q>
+                  </div>
+                </figcaption>
               </figure>
-              <figcaption>
-                <div class="instruction">
-                  <q>Put the corn on the plate, and then put the sushi in the pot</q>
-                </div>
-              </figcaption>
             </div>
           </div>
           <div class="centered columns">
@@ -255,12 +264,12 @@
                   <source src="static/videos/everything.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
+                <figcaption>
+                  <div class="instruction">
+                    <q>Put everything into the bowl</q>
+                  </div>
+                </figcaption>
               </figure>
-              <figcaption>
-                <div class="instruction">
-                  <q>Put everything into the bowl</q>
-                </div>
-              </figcaption>
             </div>
             <div class="top centered third">
               <figure>
@@ -268,10 +277,10 @@
                   <source src="static/videos/close.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
+                <figcaption>
+                  <div class="instruction"><q>Close the drawer</q></div>
+                </figcaption>
               </figure>
-              <figcaption>
-                <div class="instruction"><q>Close the drawer</q></div>
-              </figcaption>
             </div>
           </div>
         </div>
@@ -285,9 +294,15 @@
           demonstrates strong performance compared to other non-hierarchical reinforcement learning
           methods when using stitch datasets.
         </p>
-        <div class="centered">
-          <img src="static/figures/ogbench.svg" />
-        </div>
+        <figure>
+          <div class="centered">
+            <img src="static/figures/ogbench.svg" />
+          </div>
+          <figcaption title="Figure">
+            <em>Left:</em> Comparing TRA with baselines in OGBench. <em>Right:</em> The
+            $\texttt{cube-single}$ and $\texttt{humanoidmaze}$ environments.
+          </figcaption>
+        </figure>
       </section>
     </main>
   </body>

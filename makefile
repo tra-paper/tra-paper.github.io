@@ -36,5 +36,5 @@ build:
 clean:
 	rm -rf build
 
-static/videos/tra-anim.mp4: ~/projects/tra/tra_AME/tra-anim.mp4
+static/videos/tra-anim.mp4: ~/projects/tra/animation/tra_AME/tra-anim.mp4
 	cp $< $@

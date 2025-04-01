@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Temporal Representation Alignment" />
     <link rel="stylesheet" href="./static/css/fontawesome.all.min.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
     <script defer src="./static/js/fontawesome.all.min.js"></script>
     <link
       rel="stylesheet"
@@ -17,8 +15,8 @@
     <link rel="stylesheet" href="static/css/index.css" />
 
     <title>
-      Temporal Representation Alignment: Successor Features Enable Emergent Compositionality in
-      Robot Instruction Following
+      Temporal Representation Alignment: Successor Features Enable Emergent Compositionality in Robot Instruction
+      Following
     </title>
 
     <script
@@ -71,26 +69,19 @@
     </script>
     <header>
       <h1>
-        Temporal Representation Alignment: Emergent Compositionality in Instruction Following with
-        Successor Features
+        Temporal Representation Alignment: Emergent Compositionality in Instruction Following with Successor Features
       </h1>
       <div class="authors">
-        <span class="author equal"
-              ><a href="https://people.eecs.berkeley.edu/~vmyers">Vivek Myers</a></span
-            >
-            <span class="affil">1</span>
-            <span class="author equal"
-                  ><a href="https://wj2003b.github.io">Bill Chunyuan Zheng</a></span
-                >
-                <span class="affil">1</span>
-                <span class="author"><a href="http://people.eecs.berkeley.edu/~anca/">Anca Dragan</a></span>
-                <span class="affil">1</span>
-                <span class="author"><a href="https://kuanfang.github.io">Kuan Fang</a></span>
-                <span class="affil">2</span>
-                <span class="author"
-                      ><a href="https://people.eecs.berkeley.edu/~svlevine/">Sergey Levine</a></span
-                    >
-                    <span class="affil">1</span>
+        <span class="author equal"><a href="https://people.eecs.berkeley.edu/~vmyers">Vivek Myers</a></span>
+        <span class="affil">1</span>
+        <span class="author equal"><a href="https://wj2003b.github.io">Bill Chunyuan Zheng</a></span>
+        <span class="affil">1</span>
+        <span class="author"><a href="http://people.eecs.berkeley.edu/~anca/">Anca Dragan</a></span>
+        <span class="affil">1</span>
+        <span class="author"><a href="https://kuanfang.github.io">Kuan Fang</a></span>
+        <span class="affil">2</span>
+        <span class="author"><a href="https://people.eecs.berkeley.edu/~svlevine/">Sergey Levine</a></span>
+        <span class="affil">1</span>
       </div>
       <div class="notes">
         <span class="notice equal">Equal Contribution</span>
@@ -128,11 +119,10 @@
             <figcaption>
               <b>Figure:</b>
               We show our Temporal Representation Alignment (TRA) method performing a language task,
-              <q>put all food items in the bowl.</q> TRA adds a time-contrastive loss for learning
-              task representations to use with a goal- and language-conditioned policy. While TRA
-              can implicitly decompose the task into steps and execute them one by one, the
-              behavioral cloning (BC) and offline RL (AWR) methods fail at this compositional task.
-              The structured representations learned by TRA enable this compositional behavior
+              <q>put all food items in the bowl.</q> TRA adds a time-contrastive loss for learning task representations
+              to use with a goal- and language-conditioned policy. While TRA can implicitly decompose the task into
+              steps and execute them one by one, the behavioral cloning (BC) and offline RL (AWR) methods fail at this
+              compositional task. The structured representations learned by TRA enable this compositional behavior
               without explicit planning or hierarchical structure.
             </figcaption>
           </div>
@@ -145,26 +135,23 @@
             <div class="abstract">
               <h3>Abstract</h3>
               <p>
-                Effective task representations should facilitate compositionality, such that after
-                learning a variety of basic tasks, an agent can perform compound tasks consisting of
-                multiple steps simply by composing the representations of the constituent steps
-                together. While this is conceptually simple and appealing, it is not clear how to
-                automatically learn representations that enable this sort of compositionality. We
-                show that learning to associate the representations of current and future states
-                with a temporal alignment loss can improve compositional generalization, even in the
-                absence of any explicit subtask planning or reinforcement learning. This approach is
-                able to generalize to novel composite tasks specified as goal images or language
-                instructions, without assuming any additional reward supervision or explicit subtask
-                planning. We evaluate our approach across diverse robotic manipulation tasks as well
-                as in simulation, showing substantial improvements for tasks specified with either
-                language or goal images.
+                Effective task representations should facilitate compositionality, such that after learning a variety of
+                basic tasks, an agent can perform compound tasks consisting of multiple steps simply by composing the
+                representations of the constituent steps together. While this is conceptually simple and appealing, it
+                is not clear how to automatically learn representations that enable this sort of compositionality. We
+                show that learning to associate the representations of current and future states with a temporal
+                alignment loss can improve compositional generalization, even in the absence of any explicit subtask
+                planning or reinforcement learning. This approach is able to generalize to novel composite tasks
+                specified as goal images or language instructions, without assuming any additional reward supervision or
+                explicit subtask planning. We evaluate our approach across diverse robotic manipulation tasks as well as
+                in simulation, showing substantial improvements for tasks specified with either language or goal images.
               </p>
             </div>
           </div>
           <div class="half">
             <video autoplay muted loop>
               <source src="static/videos/tra-anim.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
+              Your browser does not support the video tag.
             </video>
           </div>
         </div>
@@ -188,7 +175,7 @@
               <figure>
                 <video autoplay muted loop>
                   <source src="static/videos/mushroom_out.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
+                  Your browser does not support the video tag.
                 </video>
                 <figcaption>
                   <div class="instruction"><q>Take the mushroom out of the drawer</q></div>
@@ -199,7 +186,7 @@
               <figure>
                 <video autoplay muted loop>
                   <source src="static/videos/food_in_drawer.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
+                  Your browser does not support the video tag.
                 </video>
                 <figcaption>
                   <div class="instruction"><q>Put the food items into the drawer</q></div>
@@ -210,7 +197,7 @@
               <figure>
                 <video autoplay muted loop>
                   <source src="static/videos/blue_objects.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
+                  Your browser does not support the video tag.
                 </video>
                 <figcaption>
                   <div class="instruction"><q>Put the blue objects into the pan</q></div>
@@ -223,7 +210,7 @@
               <figure>
                 <video autoplay muted loop>
                   <source src="static/videos/fold.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
+                  Your browser does not support the video tag.
                 </video>
               </figure>
               <figcaption>
@@ -234,7 +221,7 @@
               <figure>
                 <video autoplay muted loop>
                   <source src="static/videos/tra.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
+                  Your browser does not support the video tag.
                 </video>
                 <figcaption>
                   <div class="instruction">
@@ -247,7 +234,7 @@
               <figure>
                 <video autoplay muted loop>
                   <source src="static/videos/corn_sushi.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
+                  Your browser does not support the video tag.
                 </video>
                 <figcaption>
                   <div class="instruction">
@@ -262,7 +249,7 @@
               <figure>
                 <video autoplay muted loop>
                   <source src="static/videos/everything.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
+                  Your browser does not support the video tag.
                 </video>
                 <figcaption>
                   <div class="instruction">
@@ -275,7 +262,7 @@
               <figure>
                 <video autoplay muted loop>
                   <source src="static/videos/close.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
+                  Your browser does not support the video tag.
                 </video>
                 <figcaption>
                   <div class="instruction"><q>Close the drawer</q></div>
@@ -289,26 +276,22 @@
       <section>
         <h2>Simulation Results</h2>
         <p>
-          We evaluate TRA in OGBench, a challenging offline simulation environment designed for
-          goal-reaching policies. TRA outperforms behavior cloning in general experiments, and
-          demonstrates strong performance compared to other non-hierarchical reinforcement learning
-          methods when using stitch datasets.
+          We evaluate TRA in OGBench, a challenging offline simulation environment designed for goal-reaching policies.
+          TRA outperforms behavior cloning in general experiments, and demonstrates strong performance compared to other
+          non-hierarchical reinforcement learning methods when using stitch datasets.
         </p>
         <figure>
           <div class="centered">
             <img src="static/figures/ogbench.svg" />
           </div>
           <figcaption title="Figure">
-            <em>Left:</em> Comparing TRA with baselines in OGBench. <em>Right:</em> The
-            $\texttt{cube-single}$ and $\texttt{humanoidmaze}$ environments.
+            <em>Left:</em> Comparing TRA with baselines in OGBench. <em>Right:</em> The $\texttt{cube-single}$ and
+            $\texttt{humanoidmaze}$ environments.
           </figcaption>
         </figure>
       </section>
       <section>
-        <h2>
-          ${\bf B\kern-.05em{\small I\kern-.025em B}\kern-.08em
-          T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}$
-        </h2>
+        <h2>${\bf B\kern-.05em{\small I\kern-.025em B}\kern-.08em T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}$</h2>
         <pre
           class="language-bibtex bibtex"
           id="bibtex"
